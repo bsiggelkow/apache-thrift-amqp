@@ -24,7 +24,7 @@ $:.push('../../transport/rb')
 $:.unshift '../../lib/rb/lib'
 
 require 'thrift'
-require 'thrift/server/mongrel_http_server'
+# require 'thrift/server/mongrel_http_server'
 require 'thrift/protocol/compact_protocol'
 require 'amqp_rpc_service'
 
@@ -160,7 +160,7 @@ if ARGV[0] == "socket"
 elsif ARGV[0] == "http"
 
   #"http://localhost:8081/calc"
-  server = Thrift::MongrelHTTPServer.new(processor, { :ip => '127.0.0.1', :port => "8081"})
+  server = Thrift::ThinHTTPServer.new(processor, { :ip => '127.0.0.1', :port => "8081"})
   #server = Thrift::MongrelHTTPServer.new(processor, { :ip => '127.0.0.1', :port => "8081", :protocol_factory => Thrift::CompactProtocolFactory.new})
 else
   server = Thrift::AmqpRpcServer.new(processor,

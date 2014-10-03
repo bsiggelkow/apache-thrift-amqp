@@ -28,4 +28,4 @@ From a second command line in the tutorial/rb directory, execute RubyClient.rb
 
 When using AMQP, run multiple RubyServer worker processes to demonstrate load balancing across workers.
 
-
+If you get errors installing the thrift gem try: bundle config build.thrift "--with-cppflags=-D_FORTIFY_SOURCE=0"

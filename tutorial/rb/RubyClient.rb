@@ -23,7 +23,7 @@ $:.push('../gen-rb')
 $:.push('../../transport/rb')
 $:.unshift '../../lib/rb/lib'
 
-require "json"
+require 'json'
 require 'thrift'
 require 'amqp_rpc_client'
 
